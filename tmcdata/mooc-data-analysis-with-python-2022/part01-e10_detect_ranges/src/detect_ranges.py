@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 def detect_ranges(L):
-    return []
+    rangeList = sorted(L)
+    parser = []
+    return rangeList
 
 def main():
     L = [2, 5, 4, 8, 12, 6, 7, 10, 13]
