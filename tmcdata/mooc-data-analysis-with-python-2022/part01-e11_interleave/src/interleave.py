@@ -10,6 +10,16 @@ def interleave(*lists):
             result.append(lists[i][j])
     return result
 
+def interleave(*lists):
+    # to zip multiple list, 
+    # use The strange looking argument notation (the star) is called argument packing
+    result = []
+    print(list(zip(*lists)))
+    for t in zip(*lists):
+        result.extend(t)
+        print(result)
+    return result
+
 def main():
     print(list(interleave([1, 2, 3], [20, 30, 40], ['a', 'b', 'c'])))
 
