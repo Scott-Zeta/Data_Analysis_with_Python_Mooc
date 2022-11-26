@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+from string import punctuation
+ 
+def acronyms(s):
+    L = [x.strip(punctuation) for x in s.split() ]
+    return [ x for x in L if x.isupper() and len(x) >= 2 ]
 
 def acronyms(s):
     punc = [",",".","(",")"]
