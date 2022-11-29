@@ -25,9 +25,12 @@ e.g search \. for .
 3. character set[], any character inside that want to match, if metacharacters inside [], no need for back slash. e.g. [-.] match only one - or . , 3-4 and 2.6 all match with \d[-.]\d, [89]00 can be 800 or 900.
     - \- between value inside [] can be the range of the value, like [1-7]
     - ^ in the [] means non-in the set, like [^a-z] means non-lowercase letters.
-4. Quantifier,
+4. Quantifier, Quantifier always outside of the character set []+ []{2} []*
     - \* : 0 or More
     - \+ : 1 or More
     - ? : 0 or 1, Mr\.? looking for Mr or Mr.
     - {} : exact repeat times {3} for 3 times, \d{3} looking for continuesly 3 digits
     - {min,max}: range, {3,5} from 3 times to 5 times
+5. group (), group for different parttern
+    - | for or, M(r|s|rs) looking for Mr, Ms and Mrs
+    - can use $ for group number, e.g. $1, $2, $3 for (1)(2)(3), $2$3 for (2)and(3)
