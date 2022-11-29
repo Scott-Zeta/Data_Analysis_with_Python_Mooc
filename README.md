@@ -2,6 +2,7 @@
 https://dap-21.mooc.fi/
 
 ## Note for regular expression
+https://youtu.be/sa-TUpSx1JA
 1. MetaCharacters: . [ { ( ) } ] \ ^ $ | ? * +   have special meaning, if want to search them, add back slash.
 e.g search \. for .
 2. \ expression    
