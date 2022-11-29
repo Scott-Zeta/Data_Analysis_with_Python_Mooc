@@ -1,2 +1,33 @@
 # Data_Analysis_with_Python_Mooc
 https://dap-21.mooc.fi/
+
+## Note for regular expression
+1. MetaCharacters: . [ { ( ) } ] \ ^ $ | ? * +   have special meaning, if want to search them, add back slash.
+e.g search \. for .
+2. \ expression    
+    - . for any character excepte newline
+    - \d for 0-9 digits
+    - \D for non-digits
+    - \w word character, a-z, A-Z, 0-9, _ underline
+    - \W non-word
+    - \s any white space(tab, newline)
+    - \S non-white space
+    - \b Word Boundary, check if split from other word character
+    - \B non-word boundary
+        eg. ha haha,
+        1. \bha, return first and second
+        2. ha\b, return first and third
+        3. \bha\b, return first
+        4. \bha\B, return second
+        5. \Bha\b, return third
+    - ^ begining of String(a line)
+    - $ end of String(a line)
+3. character set[], any character inside that want to match, if metacharacters inside [], no need for back slash. e.g. [-.] match only one - or . , 3-4 and 2.6 all match with \d[-.]\d, [89]00 can be 800 or 900.
+    - \- between value inside [] can be the range of the value, like [1-7]
+    - ^ in the [] means non-in the set, like [^a-z] means non-lowercase letters.
+4. Quantifier,
+    - \* : 0 or More
+    - \+ : 1 or More
+    - ? : 0 or 1, Mr\.? looking for Mr or Mr.
+    - {} : exact repeat times {3} for 3 times, \d{3} looking for continuesly 3 digits
+    - {min,max}: range, {3,5} from 3 times to 5 times
