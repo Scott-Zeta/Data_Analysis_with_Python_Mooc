@@ -4,7 +4,7 @@ https://dap-21.mooc.fi/
 ## Note for regular expression
 https://youtu.be/sa-TUpSx1JA
 1. MetaCharacters: . [ { ( ) } ] \ ^ $ | ? * +   have special meaning, if want to search them, add back slash.
-e.g search \. for .
+e.g search \\. for .
 2. \ expression    
     - . for any character excepte newline
     - \d for 0-9 digits
@@ -35,6 +35,7 @@ e.g search \. for .
 5. group (), group for different parttern
     - | for or, M(r|s|rs) looking for Mr, Ms and Mrs
     - can use $ for group number, e.g. $1, $2, $3 for (1)(2)(3), $2$3 for (2)and(3)
+<<<<<<< HEAD
 
 ## Regular expression in Python
 1. Raw String, put an r before a string, r"\tString", it will use \t literally without turn into tab.
@@ -44,3 +45,5 @@ e.g search \. for .
 5. pattern.sub(r'\2\3', String), replace the original string with group 2 and group 3
 6. finditer(String), return match object with extra info. findall(String) return matches as list of String. If it has group in regular expression raw String, it will return group tuples or the only group
 7. pattern.match() only return the first one or null(if not exist). pattern.search() will return the first one too but with full info like finditer()
+=======
+>>>>>>> 989766470e25ea1c3f5605ae05768eea3d8d8f7a
