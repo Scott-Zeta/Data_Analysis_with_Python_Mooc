@@ -12,6 +12,12 @@ def file_listing(filename="src/listing.txt"):
         print(f'{count}: {line}',end="")
         matches = re.findall(r'(\d+)\s+(\w{3})\s+(\d{1,2})\s+(\d{2}):(\d{2})\s+([.\w]+.\w+)', line)
         print(matches[0])
+        
+        # another solution of digits string elements to Integer
+        toIntTuple = (int(element) if element.isdecimal() else element for element in matches[0])
+        print(list(toIntTuple))
+        
+        
         intTuple = ()
         for element in matches[0]:
             if element.isnumeric():
