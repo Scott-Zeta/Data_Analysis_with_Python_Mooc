@@ -15,6 +15,18 @@ def word_frequencies(filename = "src/alice.txt"):
                         result[word] = 1
     return result
 
+# alternative way to read the file
+def word_frequencies(filename = "src/alice.txt"):
+    result = {}
+    with open(filename) as in_file:
+        for w in in_file.read().split():
+            ws = w.strip("""!"#$%&'()*,-./:;?@[]_""")
+            if ws not in result:
+                result[ws] = 0
+            result[ws] += 1
+    return result
+
+
 def main():
     dic = word_frequencies()
     print(dic)
