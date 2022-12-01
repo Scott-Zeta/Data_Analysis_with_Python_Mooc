@@ -4,10 +4,22 @@ import re
 
 
 def file_listing(filename="src/listing.txt"):
-    return []
+    count = 1
+    result = []
+    with open(filename,"r") as f:
+        lines = f.readlines()
+    for line in lines:
+        print(f'{count}: {line}',end="")
+        matches = re.findall(r'(\d+)\s+(\w{3})\s+(\d{1,2})\s+(\d{2}):(\d{2})\s+([.\w]+.\w+)', line)
+        print(matches[0])
+        # toIntTuple = (int(element) for element in matches[0])
+        result.append(matches[0])
+        count +=1
+    print(result)
+    return result
 
 def main():
-    pass
+    file_listing()
 
 if __name__ == "__main__":
     main()
