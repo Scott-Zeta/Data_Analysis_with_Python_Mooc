@@ -20,8 +20,8 @@ def calculate(dataset):
     dataset = [float(element) for element in dataset]
     sum = reduce(lambda x,y: x+y,dataset,0)
     avg = sum/len(dataset)
-    #std = math.sqrt((reduce(lambda x,y: (x - avg)**2 + y,dataset,0))/(len(dataset)-1))
-    std = statistics.stdev(dataset)
+    std = math.sqrt((reduce(lambda x,y: (y - avg)**2 + x,dataset,0))/(len(dataset)-1))
+    # std = statistics.stdev(dataset)
     return sum,avg,std
 
 def main():
