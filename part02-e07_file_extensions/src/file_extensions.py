@@ -23,13 +23,21 @@ def file_extensions(filename):
             else:
                 #non_extention()
                 li.append(l)
-    print(li)
-    print(dic)
-    return ([], {})
+    # print(li)
+    # print(dic)
+    return (li, dic)
 
 def main():
+    filename = ""
     if(len(sys.argv) > 1):
-        file_extensions(sys.argv[1])
+        filename = sys.argv[1]
+    tp = file_extensions(filename)
+    # print(tp)
+    print(f"{len(tp[0])} files with no extension")
+    for li in sorted(tp[1]):
+        print(f'{li} {len(tp[1][li])}')
+    
+        
 
 if __name__ == "__main__":
     main()
