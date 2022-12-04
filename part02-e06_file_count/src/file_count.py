@@ -21,7 +21,10 @@ def file_count(filename):
 
 def main():
     if(len(sys.argv) > 1):
-        file_count(sys.argv[1])
+        filelist = sys.argv[1:]
+        for filename in filelist:
+            lines, words, chars = file_count(filename)
+            print(f'{lines}\t{words}\t{chars}\t{filename}')
 
 if __name__ == "__main__":
     main()
