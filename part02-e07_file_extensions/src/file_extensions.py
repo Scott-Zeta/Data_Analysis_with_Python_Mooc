@@ -15,11 +15,16 @@ def file_extensions(filename):
             matches = re.search(r'.+\.[^\.]+', l)
             if(matches != None):
                 ex = l.split(".")[-1]
-                print(ex)
+                if ex in dic:
+                    dic[ex].append(l)
+                else:
+                    dic[ex] = []
+                    dic[ex].append(l)
             else:
                 #non_extention()
                 li.append(l)
     print(li)
+    print(dic)
     return ([], {})
 
 def main():
