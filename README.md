@@ -13,7 +13,7 @@ e.g search \\. for .
     - \W non-word
     - \s any white space(tab, newline)
     - \S non-white space
-    - \b Word Boundary, check if split from other word character
+    - \b Word Boundary, check if split from other word's character in the same string
     - \B non-word boundary
         eg. ha haha,
         1. \bha, return first and second
