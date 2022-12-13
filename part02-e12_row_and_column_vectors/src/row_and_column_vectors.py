@@ -3,10 +3,18 @@
 import numpy as np
 
 def get_row_vectors(a):
-    return []
+    row = []
+    news = np.split(a, a.shape[0])
+    for i,p in enumerate(news):
+        row.append(p)
+    return row
 
 def get_column_vectors(a):
-    return []
+    col = []
+    news = np.split(a, a.shape[1],axis =1)
+    for i,p in enumerate(news):
+        col.append(p)
+    return col
 
 def main():
     np.random.seed(0)
