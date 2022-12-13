@@ -3,10 +3,19 @@
 import numpy as np
 
 def get_rows(a):
-    return []
+    row = []
+    for n in range(a.shape[0]):
+        r = a[n,:]
+        row.append(r)
+    return row
 
 def get_columns(a):
-    return []
+    col = []
+    a = a.T
+    for n in range(a.shape[0]):
+        r = a[n,:]
+        col.append(r)
+    return col
 
 def main():
     np.random.seed(0)
