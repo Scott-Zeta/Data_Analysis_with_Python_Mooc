@@ -7,6 +7,7 @@ def vector_angles(X, Y):
      #Find dot product for the numerator
     prod = np.multiply(X,Y)
     dotProduct = np.sum(prod)
+    # dotProduct = np.dot(X,Y)
 
     #find the norm of both X and Y
     normX = np.sqrt(np.sum(np.square(X)))
@@ -14,10 +15,15 @@ def vector_angles(X, Y):
 
     #This gives the whole fraction
     fraction = dotProduct/(np.multiply(normX,normY))
+    print(fraction)
+    # cos value reverse to angle
     angle = np.arccos(fraction)
+    print(angle)
 
     #changing from degrees to radians
+    # angle to radians (the length of unit 1 circle)
     result = angle*180/np.pi
+    print(result)
     return np.array(result)
 
 def main():
