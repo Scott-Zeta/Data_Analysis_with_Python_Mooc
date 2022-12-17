@@ -142,3 +142,63 @@ checksum = '45e6a8c92899febc975d6471be332835'
 [exercises.part02-e16_multiplication_table_revisited]
 id = 188693
 checksum = 'e0d5bede89ce32e17690b3e8eb02e2dd'
+
+[exercises.part03-e01_column_comparison]
+id = 188773
+checksum = '0f200a31ccf497c1a7e7af8a65c72272'
+
+[exercises.part03-e02_first_half_second_half]
+id = 188778
+checksum = '3b3e0fb94bd674c2eb4ebab2f8bd31e8'
+
+[exercises.part03-e03_most_frequent_first]
+id = 188782
+checksum = '70ce3d3b7de674c699d6bcc93cce397f'
+
+[exercises.part03-e04_matrix_power]
+id = 188771
+checksum = '37487d7c6a97d6364dc8ebe5043e2f4a'
+
+[exercises.part03-e05_correlation]
+id = 188781
+checksum = '56d14e11f92c2b669db9ffaeb42e845e'
+
+[exercises.part03-e06_meeting_lines]
+id = 188779
+checksum = '99b271998bc45f4d791131dbb471813e'
+
+[exercises.part03-e07_meeting_planes]
+id = 188783
+checksum = '4c92d78319e5a98034094d53f7b2b087'
+
+[exercises.part03-e08_almost_meeting_lines]
+id = 188774
+checksum = '0fd052365ce1895c372d93f4908b6825'
+
+[exercises.part03-e09_multiple_graphs]
+id = 188777
+checksum = '131c98aa1b3037b9cec3544f13edacda'
+
+[exercises.part03-e10_subfigures]
+id = 188772
+checksum = 'a2e850e244393776197cbd1462cdbbb7'
+
+[exercises.part03-e11_to_grayscale]
+id = 188770
+checksum = '4bf51ae2787ca84a3194d9e969e68577'
+
+[exercises.part03-e12_radial_fade]
+id = 188776
+checksum = '809064d36205fa66093d7dbaf0657d4d'
+
+[exercises.part03-e13_read_series]
+id = 188775
+checksum = 'c13e59eeacee2b1abc99f90482aaf68b'
+
+[exercises.part03-e14_operations_on_series]
+id = 188780
+checksum = 'fec8c98e3a3e888d71576c9e82e90a68'
+
+[exercises.part03-e15_inverse_series]
+id = 188769
+checksum = '7d5d765c739d99368dc3e2e01689cd40'
