@@ -17,10 +17,6 @@ def most_frequent_first(a, c):
     # hash the counts on inverse (actually rebuild the inverse with counts elements)
     idx = np.flip(np.argsort(counts[inverse]))
     print(idx)
-    # idx = np.flip(np.argsort(counts))
-    # print(unique[idx])
-    # print(counts[idx])
-    # a = a[unique[idx],:]
     return a[idx]
 
 def main():
