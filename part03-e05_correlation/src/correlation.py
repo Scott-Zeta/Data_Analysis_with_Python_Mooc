@@ -8,10 +8,20 @@ def load():
     return pd.read_csv("src/iris.csv").drop('species', axis=1).values
 
 def lengths():
-    return 0
+    dataset = load()
+    sepalLength = dataset[:,0]
+    petalLength = dataset[:,2]
+    r,p = scipy.stats.pearsonr(sepalLength,petalLength)
+    return r
 
 def correlations():
-    return np.array([])
+    dataset = load()
+    sepalLength = dataset[:,0]
+    sepalWidth = dataset[:,1]
+    petalLength = dataset[:,2]
+    petalWidth = dataset[:,3]
+    correlations = np.corrcoef([sepalLength,sepalWidth,petalLength,petalWidth])
+    return correlations
 
 def main():
     print(lengths())
