@@ -3,7 +3,10 @@
 import numpy as np
 
 def meeting_lines(a1, b1, a2, b2):
-    return []
+    A = np.array([[-a1,1],[-a2,1]])
+    b = np.array([b1,b2])
+    x,y = np.linalg.solve(A,b)
+    return x,y
 
 def main():
     a1=1
