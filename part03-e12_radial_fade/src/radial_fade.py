@@ -18,17 +18,28 @@ def radial_distance(a):
 def scale(a, tmin=0.0, tmax=1.0):
     """Returns a copy of array 'a' with its values scaled to be in the range
 [tmin,tmax]."""
-    return np.array([[]])
+    scaled_a = np.interp(a,(a.min(),a.max()),(tmin,tmax))
+    return scaled_a
 
 def radial_mask(a):
-    return np.array([[]])
+    result = scale(radial_distance(a))
+    return result
 
 def radial_fade(a):
     return np.array([[]])
 
 def main():
+    a = np.random.randint(0,11,size=(3,3))
     print(center(np.zeros((5, 5, 3))))
     print(radial_distance(np.zeros((5, 5, 3))))
+    print(a)
+    print(scale(a))
+    image = plt.imread("src/painting.png").copy()
+    f, ax = plt.subplots(3,1)
+    ax[0].imshow(image)
+    ax[1].imshow(radial_mask(image),cmap=plt.get_cmap('gray'))
+    ax[2].imshow(radial_fade(image))
+    plt.show()
 
 if __name__ == "__main__":
     main()
