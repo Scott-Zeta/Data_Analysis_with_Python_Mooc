@@ -4,8 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def center(a):
-    height,width,_ = a.shape
-    return ((height-1)/2,(width-1)/2)   # note the order: (center_y, center_x)
+    height = (a.shape[0]-1)/2
+    width = (a.shape[1]-1)/2
+    return (height,width)   # note the order: (center_y, center_x)
 
 def radial_distance(a):
     h,w,_ = a.shape
@@ -22,11 +23,11 @@ def scale(a, tmin=0.0, tmax=1.0):
     return scaled_a
 
 def radial_mask(a):
-    result = scale(radial_distance(a))
+    result = scale(1-radial_distance(a))
     return result
 
 def radial_fade(a):
-    return np.array([[]])
+    return a * radial_mask(a)[...,np.newaxis] #add a new dimension 
 
 def main():
     a = np.random.randint(0,11,size=(3,3))
