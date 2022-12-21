@@ -202,3 +202,71 @@ checksum = 'fec8c98e3a3e888d71576c9e82e90a68'
 [exercises.part03-e15_inverse_series]
 id = 188769
 checksum = '7d5d765c739d99368dc3e2e01689cd40'
+
+[exercises.part04-e01_cities]
+id = 188761
+checksum = 'c57568f41d96e980217b01a966ba6a8a'
+
+[exercises.part04-e02_powers_of_series]
+id = 188754
+checksum = '9a6fbcc5ae36c85c48649cf68b953974'
+
+[exercises.part04-e03_municipal_information]
+id = 188751
+checksum = '821fc92a73f3b9188734d44e440c9c76'
+
+[exercises.part04-e04_municipalities_of_finland]
+id = 188759
+checksum = 'a21b2284c4bcf405515845d429a59c76'
+
+[exercises.part04-e05_swedish_and_foreigners]
+id = 188767
+checksum = '255b74473d4b47390369ab8fae23169a'
+
+[exercises.part04-e06_growing_municipalities]
+id = 188752
+checksum = '90a1c536cb66198577dc8013eb917a3e'
+
+[exercises.part04-e07_subsetting_with_loc]
+id = 188755
+checksum = '9dd60571a4bcbf19d972a6d01f6ec2b5'
+
+[exercises.part04-e08_subsetting_by_positions]
+id = 188758
+checksum = 'fd68dd9bdfc9806b3a09fcd3d96a4fea'
+
+[exercises.part04-e09_snow_depth]
+id = 188764
+checksum = 'f05756aadd42b47b6ff4112bdda9dc6a'
+
+[exercises.part04-e10_average_temperature]
+id = 188757
+checksum = '55a807e3b40aa9877c2ce68a812af4f0'
+
+[exercises.part04-e11_below_zero]
+id = 188762
+checksum = '5b02e36f9aacac5825bb65744d5c199c'
+
+[exercises.part04-e12_cyclists]
+id = 188753
+checksum = '7b20fcd7a35971e983745097edf891f0'
+
+[exercises.part04-e13_missing_value_types]
+id = 188756
+checksum = '6175b4576a21f4c5fd7734f52f7e24b9'
+
+[exercises.part04-e14_special_missing_values]
+id = 188760
+checksum = 'c838314624462597c1b1251327fa3907'
+
+[exercises.part04-e15_last_week]
+id = 188765
+checksum = 'e6d954442d899e51ca33eccae4424a11'
+
+[exercises.part04-e16_split_date]
+id = 188763
+checksum = '8c5f0343a3f0cb97512593b6b60f9127'
+
+[exercises.part04-e17_cleaning_data]
+id = 188766
+checksum = 'e8d7b7400e6f2bd4d2e4078444ddc70f'
