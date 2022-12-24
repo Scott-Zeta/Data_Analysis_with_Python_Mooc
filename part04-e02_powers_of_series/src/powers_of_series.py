@@ -9,6 +9,12 @@ def powers_of_series(s, k):
         print(col)
         result = pd.concat([result,col],axis=1)
     return result
+
+# dictionary method
+def powers_of_series(s, k):
+    c=[ s**i for i in range(1,k+1) ]
+    df = pd.DataFrame(dict(zip(range(1,k+1), c)))
+    return df
     
 def main():
     s = pd.Series([1,2,3,4], index=list("abcd"))
