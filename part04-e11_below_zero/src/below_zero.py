@@ -3,10 +3,12 @@
 import pandas as pd
 
 def below_zero():
-    return 0
+    df = pd.read_csv("src/kumpula-weather-2017.csv")
+    belowZero = df[df.iloc[:,7] < 0]['Air temperature (degC)'].count()
+    return belowZero
 
 def main():
-    return
+    print(f"Number of days below zero: {below_zero()}")
     
 if __name__ == "__main__":
     main()
