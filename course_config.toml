@@ -270,3 +270,55 @@ checksum = '8c5f0343a3f0cb97512593b6b60f9127'
 [exercises.part04-e17_cleaning_data]
 id = 188766
 checksum = 'e8d7b7400e6f2bd4d2e4078444ddc70f'
+
+[exercises.part05-e01_split_date_continues]
+id = 188711
+checksum = '7d6cd0e50b45923fe617057934554f27'
+
+[exercises.part05-e02_cycling_weather]
+id = 188721
+checksum = 'f6cadc363fab288911343e904eac5268'
+
+[exercises.part05-e03_top_bands]
+id = 188717
+checksum = '3008a1360b05d2474a825a14b54d6a36'
+
+[exercises.part05-e04_cyclists_per_day]
+id = 188719
+checksum = 'a4d66ef30f55d148951d44105a2f5750'
+
+[exercises.part05-e05_best_record_company]
+id = 188710
+checksum = '625828bedeb8f17e295de673e8a3533e'
+
+[exercises.part05-e06_suicide_fractions]
+id = 188713
+checksum = '9c17960497ddeb3af31f58eacb782a25'
+
+[exercises.part05-e07_suicide_weather]
+id = 188715
+checksum = 'd81ba35a84d0ed7340133e7b77dccc48'
+
+[exercises.part05-e08_bicycle_timeseries]
+id = 188712
+checksum = 'b945468bd0e6adcfe3390f1c6d99e43d'
+
+[exercises.part05-e09_commute]
+id = 188714
+checksum = '881e8f3563ca922fb99a326ed3f652fd'
+
+[exercises.part05-e10_linear_regression]
+id = 188722
+checksum = '41032e389ceafceb2f6ea8d3cdba690a'
+
+[exercises.part05-e11_mystery_data]
+id = 188718
+checksum = 'e48be15ea72cd7bdd4ee06d347e6ab39'
+
+[exercises.part05-e12_coefficient_of_determination]
+id = 188716
+checksum = 'dbc690823a00472655946f0e58d98593'
+
+[exercises.part05-e13_cycling_weather_continues]
+id = 188720
+checksum = '081bafe49456fa8374003c4b402875fa'
