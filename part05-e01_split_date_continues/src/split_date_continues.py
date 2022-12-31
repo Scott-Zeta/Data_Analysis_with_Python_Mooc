@@ -14,7 +14,7 @@ def split_date():
     monthDic = {"tammi":1,"helmi":2,"maalis":3,"huhti":4,"touko":5,"kesä":6,"heinä":7,"elo":8,
                 "syys":9,"loka":10,"marras":11,"joulu":12}
     date['Weekday'] = date["Weekday"].map(weekdayDic)
-    date['Month'] = date["Month"].map(monthDic).map(int)
+    date['Month'] = date["Month"].map(monthDic).astype(int)
     date[['Day','Year','Hour']] = date[['Day','Year','Hour']].astype(int)
     # print(date)
     # print(date.dtypes)
@@ -28,6 +28,7 @@ def split_date_continues():
     # print(df)
     print(date.dtypes)
     result = pd.concat([date,df],axis=1)
+    # result["Weekday"] = result["Weekday"].astype(object)
     print(result)
     print(result.dtypes)
     return result
