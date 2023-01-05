@@ -38,7 +38,10 @@ def cyclists_per_day():
     return result
     
 def main():
-    print(cyclists_per_day())
+    data = cyclists_per_day().loc[(2017,8),:]
+    print(data)
+    data.plot()
+    plt.show()
     return
 
 if __name__ == "__main__":
