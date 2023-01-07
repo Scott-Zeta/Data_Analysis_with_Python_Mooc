@@ -47,6 +47,10 @@ def main():
     result = commute()
     print(result)
     result.plot()
+    # stick mon tue wed on x ticklabels
+    # x took the zero point so it will not shown up, only for the place holder
+    weekdays = "x mon tue wed thu fri sat sun".title().split()
+    plt.gca().set_xticklabels(weekdays)
     plt.show()
     return
 
