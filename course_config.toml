@@ -322,3 +322,35 @@ checksum = 'dbc690823a00472655946f0e58d98593'
 [exercises.part05-e13_cycling_weather_continues]
 id = 188720
 checksum = '081bafe49456fa8374003c4b402875fa'
+
+[exercises.part06-e01_blob_classification]
+id = 188747
+checksum = 'a40b7bd8faf8d85fb04037c30cee888b'
+
+[exercises.part06-e02_plant_classification]
+id = 188746
+checksum = 'd7ed4bb3f1f100c88c606cd3b281457e'
+
+[exercises.part06-e03_word_classification]
+id = 188750
+checksum = '6902cfc7a72443f79acdfef3d5a93089'
+
+[exercises.part06-e04_spam_detection]
+id = 188745
+checksum = '2f118bebcdac7db2d344589585c021bd'
+
+[exercises.part06-e05_plant_clustering]
+id = 188743
+checksum = 'b51b8a37a8626035d7359f0f9bafd456'
+
+[exercises.part06-e06_nonconvex_clusters]
+id = 188744
+checksum = '24749dd41611654e2ad5ccd1303bfe76'
+
+[exercises.part06-e07_binding_sites]
+id = 188749
+checksum = '45acd6059b822d236cfca45f740038e2'
+
+[exercises.part06-e08_explained_variance]
+id = 188748
+checksum = '791843db94039148af5915df12b5b035'
