@@ -29,15 +29,34 @@ def split_date_continues():
     # print(df)
     result = pd.concat([date,df],axis=1)
     # result["Weekday"] = result["Weekday"].astype(object)
-    print(result)
+    # print(result)
     return result
 
 def cycling_weather_continues(station):
-    return ((0.0, 0.0, 0.0), 0.0)
+    df_weather = pd.read_csv('src/kumpula-weather-2017.csv')
+    df = split_date_continues()
+
+    new_df = pd.merge(df.loc[:, 'Weekday':'Hour'], df.loc[:, station], left_index=True, right_index=True)
+    new_df = new_df[new_df.Year == 2017]
+    a = new_df.groupby(['Month', 'Day'])[station].sum()
+    print(a)
+    merged_df = pd.merge(df_weather, a, right_on=['Day', 'Month'], left_on=['d', 'm'])
+    merged_df.fillna(method='ffill', inplace=True)
+    print(merged_df)
+    model = linear_model.LinearRegression(fit_intercept=True)
+    x = merged_df.loc[:, ['Precipitation amount (mm)', 'Snow depth (cm)', 'Air temperature (degC)']]
+    y = merged_df.loc[:, station]
+    model.fit(x, y)
+    score = model.score(x, y)
+    return model.coef_, score
     
 def main():
-    split_date_continues()
-    return
+    coef, score = cycling_weather_continues("Baana")
+    print(f"Measuring station: Baana")
+    print(f"Regression coefficient for variable 'precipitation': {coef[0]:.1f}")
+    print(f"Regression coefficient for variable 'snow depth': {coef[1]:.1f}")
+    print(f"Regression coefficient for variable 'temperature': {coef[2]:.1f}")
+    print(f"Score: {score:.2f}")
 
 if __name__ == "__main__":
     main()
