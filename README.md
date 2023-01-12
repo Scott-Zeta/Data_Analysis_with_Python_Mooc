@@ -44,3 +44,6 @@ e.g search \\. for .
 5. pattern.sub(r'\2\3', String), replace the original string with group 2 and group 3
 6. finditer(String), return match object with extra info. findall(String) return matches as list of String. If it has group in regular expression raw String, it will return group tuples or the only group
 7. pattern.match() only return the first one or null(if not exist). pattern.search() will return the first one too but with full info like finditer()
+
+## What distribution model shall I use?
+In summary, when the data is continuous and symmetric about the mean, the Gaussian distribution is a good choice. However, when the data is discrete and categorical and you want to know the probability of a sample to belong to a certain category, the multinomial distribution is the appropriate choice.
