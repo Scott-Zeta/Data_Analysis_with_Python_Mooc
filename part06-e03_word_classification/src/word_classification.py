@@ -54,7 +54,20 @@ def contains_valid_chars(s):
     return True
 
 def get_features_and_labels():
-    return np.array([[]]), np.array([])
+    finnish = load_finnish()
+    english = load_english()
+
+    finnish = [word.lower() for word in finnish]
+    finnish = np.array([word for word in finnish if contains_valid_chars(word)])
+    # get rid of word start with upper case
+    english = [word for word in english if word[0].islower()]
+    english = [word.lower() for word in english]
+    english = np.array([word for word in english if contains_valid_chars(word)])
+    
+    X = get_features(np.concatenate((finnish,english)))
+    y = np.zeros((len(X),1))
+    y[len(finnish):] = 1
+    return X, y
 
 
 def word_classification():
@@ -62,7 +75,8 @@ def word_classification():
 
 
 def main():
-    get_features(np.array(["hello", "hell", "world"]))
+    X,y = get_features_and_labels()
+    print(X.shape)
     print("Accuracy scores are:", word_classification())
 
 if __name__ == "__main__":
