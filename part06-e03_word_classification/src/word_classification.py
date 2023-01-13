@@ -36,12 +36,14 @@ def load_english():
         lines=map(lambda s: s.rstrip(), data.readlines())
     return lines
 
+# Warning, letter out of alphabet will be skiped
 def get_features(a):
     alphabetDic = {alphabet[i]:i for i in range(29)}
     feature = np.zeros((len(a),29))
     for i,word in enumerate(a):
         for char in word:
-            feature[i,alphabetDic[char]] += 1
+            if char in alphabet:
+                feature[i,alphabetDic[char]] += 1
     print(feature)
     return feature
 
