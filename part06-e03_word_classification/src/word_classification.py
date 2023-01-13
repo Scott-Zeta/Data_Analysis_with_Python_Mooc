@@ -8,6 +8,7 @@ import numpy as np
 
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import KFold
 from sklearn import model_selection
 
 alphabet="abcdefghijklmnopqrstuvwxyzäö-"
@@ -65,18 +66,20 @@ def get_features_and_labels():
     english = np.array([word for word in english if contains_valid_chars(word)])
     
     X = get_features(np.concatenate((finnish,english)))
-    y = np.zeros((len(X),1))
+    y = np.zeros(len(X))
     y[len(finnish):] = 1
     return X, y
 
 
 def word_classification():
-    return []
+    X,y = get_features_and_labels()
+    model = MultinomialNB()
+    cv = KFold(n_splits=5,shuffle=True,random_state=0)
+    result = cross_val_score(model,X,y,cv = cv)
+    return result
 
 
 def main():
-    X,y = get_features_and_labels()
-    print(X.shape)
     print("Accuracy scores are:", word_classification())
 
 if __name__ == "__main__":
