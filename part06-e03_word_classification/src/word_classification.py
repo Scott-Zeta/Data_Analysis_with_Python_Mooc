@@ -37,7 +37,13 @@ def load_english():
     return lines
 
 def get_features(a):
-    return np.array([[]])
+    alphabetDic = {alphabet[i]:i for i in range(29)}
+    feature = np.zeros((len(a),29))
+    for i,word in enumerate(a):
+        for char in word:
+            feature[i,alphabetDic[char]] += 1
+    print(feature)
+    return feature
 
 def contains_valid_chars(s):
     return True
@@ -51,6 +57,7 @@ def word_classification():
 
 
 def main():
+    get_features(np.array(["hello", "hell", "world"]))
     print("Accuracy scores are:", word_classification())
 
 if __name__ == "__main__":
