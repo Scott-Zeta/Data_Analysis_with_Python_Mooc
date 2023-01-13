@@ -48,6 +48,9 @@ def get_features(a):
     return feature
 
 def contains_valid_chars(s):
+    for char in s:
+        if char not in alphabet:
+            return False
     return True
 
 def get_features_and_labels():
