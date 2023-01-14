@@ -12,7 +12,7 @@ def find_permutation(n_clusters, real_labels, labels):
     for i in range(n_clusters):
         idx = labels == i
         # Choose the most common label among data points in the cluster
-        new_label=scipy.stats.mode(real_labels[idx])[0][0]
+        new_label=scipy.stats.mode(real_labels[idx],keepdims=True)[0][0]
         permutation.append(new_label)
     return permutation
 
@@ -21,20 +21,22 @@ def nonconvex_clusters():
     df = pd.read_csv("src/data.tsv",sep="\t")
     X = df.iloc[:,0:2]
     y = df.iloc[:,2]
+    result = []
     for n in np.arange(0.05,0.2,0.05):
         model = DBSCAN(eps=n)
         model.fit(X)
         # -1 in cluster label means the noisy point
         n_cluster = len(np.unique(model.labels_)) - (1 if -1 in model.labels_ else 0)
+        outlier = np.count_nonzero(model.labels_ == -1)
         if n_cluster == len(np.unique(y)):
             permutation = find_permutation(n_cluster,y,model.labels_)
             new_labels = [permutation[label] for label in model.labels_]
-            acc = accuracy_score(y,new_labels)
+            acc = round(accuracy_score(y,new_labels),2)
         else:
             acc = np.nan
-        print(f'{n}:{acc}')
+        result.append([n,acc,n_cluster,outlier])
 
-    return pd.DataFrame()
+    return pd.DataFrame(data=result, columns= ["eps", "Score", "Clusters", "Outliers"])
 
 def main():
     print(nonconvex_clusters())
