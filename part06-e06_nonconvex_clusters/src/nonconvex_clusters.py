@@ -12,7 +12,7 @@ def find_permutation(n_clusters, real_labels, labels):
     for i in range(n_clusters):
         idx = labels == i
         # Choose the most common label among data points in the cluster
-        new_label=scipy.stats.mode(real_labels[idx],keepdims=True)[0][0]
+        new_label=scipy.stats.mode(real_labels[idx])[0][0]
         permutation.append(new_label)
     return permutation
 
@@ -36,7 +36,7 @@ def nonconvex_clusters():
             acc = np.nan
         result.append([n,acc,n_cluster,outlier])
 
-    return pd.DataFrame(data=result, columns= ["eps", "Score", "Clusters", "Outliers"])
+    return pd.DataFrame(data=result, columns= ["eps", "Score", "Clusters", "Outliers"],dtype="float64")
 
 def main():
     print(nonconvex_clusters())
