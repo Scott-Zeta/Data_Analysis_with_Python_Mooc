@@ -10,8 +10,18 @@ from matplotlib import pyplot as plt
 
 import seaborn as sns
 sns.set(color_codes=True)
+import scipy
 import scipy.spatial as sp
 import scipy.cluster.hierarchy as hc
+
+def find_permutation(n_clusters, real_labels, labels):
+    permutation=[]
+    for i in range(n_clusters):
+        idx = labels == i
+        # Choose the most common label among data points in the cluster
+        new_label=scipy.stats.mode(real_labels[idx])[0][0]
+        permutation.append(new_label)
+    return permutation
 
 def toint(x):
     dic = {"A":0,"C":1,"G":2,"T":3}
@@ -40,7 +50,15 @@ def plot(distances, method='average', affinity='euclidean'):
     plt.show()
 
 def cluster_euclidean(filename):
-    return 0.0
+    data = get_features_and_labels(filename)
+    X = data[0]
+    y = data[1]
+    model = AgglomerativeClustering(n_clusters= 2, affinity= "euclidean", linkage="average")
+    model.fit(X)
+    permutation = find_permutation(2,y,model.labels_)
+    y_fitted = [permutation[label] for label in model.labels_]
+    acc = accuracy_score(y,y_fitted)
+    return acc
 
 def cluster_hamming(filename):
     return 0.0
