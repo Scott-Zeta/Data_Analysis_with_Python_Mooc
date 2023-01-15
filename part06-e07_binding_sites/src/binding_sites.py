@@ -14,10 +14,24 @@ import scipy.spatial as sp
 import scipy.cluster.hierarchy as hc
 
 def toint(x):
-    return 0
+    dic = {"A":0,"C":1,"G":2,"T":3}
+    return dic[x]
 
 def get_features_and_labels(filename):
-    return (np.array([[]]), np.array([]))
+    df = pd.read_csv(filename,sep="\t")
+    X = df["X"]
+    y = df["y"]
+    y = y.to_numpy()
+    X = X.to_numpy()
+    new_X = []
+    for s in X:
+        new_element = []
+        for char in s:
+            new_element.append(toint(char))
+        new_X.append(np.array(new_element))
+    X = np.array(new_X)
+    print(X)
+    return (X, y)
 
 def plot(distances, method='average', affinity='euclidean'):
     mylinkage = hc.linkage(sp.distance.squareform(distances), method=method)
@@ -35,6 +49,6 @@ def cluster_hamming(filename):
 def main():
     print("Accuracy score with Euclidean affinity is", cluster_euclidean("src/data.seq"))
     print("Accuracy score with Hamming affinity is", cluster_hamming("src/data.seq"))
-
+    print(get_features_and_labels("src/data.seq"))
 if __name__ == "__main__":
     main()
