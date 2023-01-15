@@ -40,7 +40,6 @@ def get_features_and_labels(filename):
             new_element.append(toint(char))
         new_X.append(np.array(new_element))
     X = np.array(new_X)
-    print(X)
     return (X, y)
 
 def plot(distances, method='average', affinity='euclidean'):
@@ -53,6 +52,7 @@ def cluster_euclidean(filename):
     data = get_features_and_labels(filename)
     X = data[0]
     y = data[1]
+    # affinity for distance method between point, linkage for distance between cluster
     model = AgglomerativeClustering(n_clusters= 2, affinity= "euclidean", linkage="average")
     model.fit(X)
     permutation = find_permutation(2,y,model.labels_)
@@ -61,7 +61,18 @@ def cluster_euclidean(filename):
     return acc
 
 def cluster_hamming(filename):
-    return 0.0
+    data = get_features_and_labels(filename)
+    X = data[0]
+    y = data[1]
+    # this will out put a matrix of distance between each point of X
+    distance = pairwise_distances(X, metric='hamming')
+    # precomputed means distance already computed, must be a matrix
+    model = AgglomerativeClustering(n_clusters=2, affinity='precomputed', linkage='average')
+    model.fit(distance)
+    permutation = find_permutation(2,y,model.labels_)
+    y_fitted = [permutation[label] for label in model.labels_]
+    acc = accuracy_score(y,y_fitted)
+    return acc
 
 
 def main():
