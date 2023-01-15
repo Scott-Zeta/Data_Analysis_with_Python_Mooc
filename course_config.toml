@@ -354,3 +354,15 @@ checksum = '45acd6059b822d236cfca45f740038e2'
 [exercises.part06-e08_explained_variance]
 id = 188748
 checksum = '791843db94039148af5915df12b5b035'
+
+[exercises.part07-e01_sequence_analysis]
+id = 188768
+checksum = '6dc20fb2d9bafc437388c3f760f502a3'
+
+[exercises.part08-e01_regression]
+id = 188709
+checksum = '0bcec44778faa92b8a0bef8c5af26f09'
+
+[exercises.part09-e01_fossil_analysis]
+id = 188784
+checksum = '852a0acdb670c6d0c3f49aa8c9de96f4'
