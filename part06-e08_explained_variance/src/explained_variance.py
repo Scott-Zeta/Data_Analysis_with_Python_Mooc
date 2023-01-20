@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 
+from sklearn.decomposition import PCA
+import pandas as pd
+import matplotlib as plt
 
 def explained_variance():
-    return [], []
+    df = pd.read_csv('src/data.tsv', sep = '\t')
+    variance = df.var()
+    print(variance)
+    pcaModel = PCA()
+    pcaModel.fit(df)
+    ex_variance = pcaModel.explained_variance_
+    print(ex_variance)
+    return variance, ex_variance
 
 def main():
     v, ev = explained_variance()

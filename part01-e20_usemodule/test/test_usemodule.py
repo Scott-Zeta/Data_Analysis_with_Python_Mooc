@@ -33,12 +33,12 @@ class Usemodule(unittest.TestCase):
         self.assertGreater(len(triangle.__doc__), 10,
                            "The docstring for module triangle is too short!")
         
-        self.assertTrue(hasattr(triangle.hypothenuse, "__doc__"),
-                         msg="The function triangle.hypothenuse has no docstring!")
-        self.assertIsNotNone(triangle.hypothenuse.__doc__,
-                            msg="The function triangle.hypothenuse has no docstring!")
-        self.assertGreater(len(triangle.hypothenuse.__doc__), 10,
-                           msg="The doctstring for function triangle.hypothenuse is too short!")
+        self.assertTrue(hasattr(triangle.hypotenuse, "__doc__"),
+                         msg="The function triangle.hypotenuse has no docstring!")
+        self.assertIsNotNone(triangle.hypotenuse.__doc__,
+                            msg="The function triangle.hypotenuse has no docstring!")
+        self.assertGreater(len(triangle.hypotenuse.__doc__), 10,
+                           msg="The doctstring for function triangle.hypotenuse is too short!")
 
         self.assertTrue(hasattr(triangle.area, "__doc__"),
                          msg="The function triangle.area has no docstring!")
@@ -48,7 +48,7 @@ class Usemodule(unittest.TestCase):
                            msg="The doctstring for function triangle.area is too short!")
 
     def test_hypotenuse(self):
-        res = triangle.hypothenuse(1, 1)
+        res = triangle.hypotenuse(1, 1)
         self.assertIsInstance(res, float, f"hypotenuse should return a floating point number when called with 1, 1. Got {type(res)}.")
         self.assertAlmostEqual(res, 1.414, 3, f"hypotenuse with sides 1, 1 should be ~1.414. Got {res}.")
 
@@ -58,11 +58,11 @@ class Usemodule(unittest.TestCase):
         self.assertAlmostEqual(res, 0.5, 3, f"area of triangle with sides 1, 1 should be 0.5. Got {res}.")
         
     def test_main(self):
-        with patch('src.triangle.hypothenuse') as h:
+        with patch('src.triangle.hypotenuse') as h:
             with patch('src.triangle.area') as a:
                 usemodule.main()
                 self.assertGreaterEqual(h.call_count, 1,
-                                        msg="Expected 'triangle.hypothenuse' to have been called!")
+                                        msg="Expected 'triangle.hypotenuse' to have been called!")
                 self.assertGreaterEqual(a.call_count, 1,
                                         msg="Expected 'triangle.area' to have been called!")
         
